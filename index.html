@@ -20,6 +20,8 @@
 <link rel="stylesheet" type="text/css" href="css/loader.css">
 <link rel="shortcut icon" href="images/favicon.png">
 
+<script src="js/modalmodal.js"></script>
+
 <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -117,8 +119,9 @@
                            data-mask_in="x:0px;y:0px;s:inherit;e:inherit;" 
                            data-mask_out="x:0;y:0;s:inherit;e:inherit;" 
                           data-start="1200"
-                           style="z-index: 12;">
-                       <a href="#download" class="btn-common btn-white page-scroll">Download Now!</a>
+                           style="z-index: 12;"><button class="btn-common btn-white page-scroll" onclick="location.href='#download'">Download Now!</button>
+
+                       
                        </div>
       </li>
 
@@ -181,8 +184,9 @@
          <div class="text-center">
          <h2 class="heading_space">Download Now!</h2>
          <p class="heading_space detail">Download and launch the Philhis app. Choose a topic related to Philippine history. Scan a marker using your device's camera to activate the AR content. Interact with the AR content by tapping on objects or icons within the app and moving your device around. Explore additional features such as quizzes and historical timelines. Use the app in the classroom by projecting the AR content onto a screen or sharing it with students.</p>
-         <a href="https://drive.google.com/drive/folders/1AnTbcV8mS8HTEUTL_DiWbaiN9enrYKCR?usp=sharing" class="btn-common-white page-scroll" download><i class="fa fa-android"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Download App</a>
-         <br>
+         <button class="btn-common-white page-scroll" data-toggle="modal" data-target="#downloadModal"><i class="fa fa-android"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Download App</button>
+
+<br>
          <a href="PhilhisMarkers.pdf" class="btn-common-white page-scroll" style="margin-top: 15px;"><i class="fa fa-book"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Markers</a>
          </div>          
       </div>
@@ -191,6 +195,42 @@
   </div>
 </section>
 <br><br>
+
+
+<!-- Download Modal -->
+<div class="modal fade custom-modal-class" id="downloadModal" tabindex="-1" aria-labelledby="downloadModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+          </button>
+          <h5 class="modal-title fs-5" id="downloadModalLabel">Download Instructions</h5>
+     </div>
+     <div class="modal-body">
+      <p>To download the Philhis app, please follow these steps:</p>
+      <br>
+      <ul>
+          <li>First download the Philhis x64 and launch the application.</li>
+          <li>If the Philhis x64 doesn't work on your device, try downloading the Philhis x32.</li>
+          <li>If the app still doesn't work, your device may not support augmented reality.</li>
+      </ul>
+      <br>
+      <p>To check if your device is supported for augmented reality feature, please visit this link:</p>
+      <p style="color: rgb(47, 47, 179);text-decoration: underline;"><a  href="https://library.vuforia.com/platform-support/recommended-devices"><i class="fa fa-chain"></i>Vuforia Recommended Devices</a></p>
+      <p style="color: rgb(47, 47, 179);text-decoration: underline;"><a  href="https://developers.google.com/ar/devices#google_play_devices"><i class="fa fa-chain"></i>ARCore supported devices</a></p>
+  </div>
+  
+      <div class="modal-footer text-center">
+        <a href="https://drive.google.com/drive/folders/1AnTbcV8mS8HTEUTL_DiWbaiN9enrYKCR?usp=sharing" class="btn btn-primary"><i class="fa fa-android"></i> &nbsp;&nbsp;&nbsp;PHILHIS x64</a>
+        <a href="https://drive.google.com/drive/folders/1kZYWgr8q12T6NMm5VD7MZGzJufBLHexY?usp=share_link" class="btn btn-info"><i class="fa fa-android"></i> &nbsp;&nbsp;&nbsp;PHILHIS x32</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 
 
 <!--Services plus working hours-->
@@ -304,6 +344,15 @@
 </footer>
 
 <a href="#" id="back-top"><i class="fa fa-angle-up fa-2x"></i></a>
+
+<script>
+  $(function() {
+    $('.btn-common-white').click(function(e) {
+      e.preventDefault();
+      $('#downloadModal').modal('show');
+    });
+  });
+</script>
 
 <script src="js/jquery-2.2.3.js" type="text/javascript"></script>
 <script src="js/bootstrap.min.js" type="text/javascript"></script>
