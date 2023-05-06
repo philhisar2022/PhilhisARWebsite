@@ -158,8 +158,27 @@ body,html{
 ol, ul{
 	margin:0;
 	padding:0;
-	list-style:none;
+	list-style: none;
 }
+
+.modal-body ul{
+  list-style-type: disc !important;
+}
+
+
+.modal-body ul, li {
+  padding-left: 20px;
+  text-indent: -20px;
+}
+
+.custom-modal-class .modal-content {
+  padding: 10px;
+}
+
+.custom-modal-class .modal-content .modal-body{
+  padding: 50px;
+}
+
 a, a:focus{
 	color: inherit;
 }
